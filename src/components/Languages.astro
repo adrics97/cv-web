@@ -1,0 +1,13 @@
+---
+import Card from "../components/Card.astro";
+import LanguageItem from "../components/LanguageItem.astro";
+---
+
+<Card class="w-72 p-3 flex flex-col justify-between">
+  <p class="text-base font-semibold">Idiomas</p>
+  <div class="flex flex-col gap-y-1 text-sm">
+    <LanguageItem name="Ingles" level="7" />
+    <LanguageItem name="Español" level="10" />
+    <LanguageItem name="Valenciano" level="7" />
+  </div>
+</Card>
