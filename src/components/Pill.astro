@@ -2,7 +2,7 @@
 const { class: className } = Astro.props;
 ---
 
-<span
+<a
   class=`rounded-full
   flex
   justify-center
@@ -17,6 +17,8 @@ const { class: className } = Astro.props;
   transition
   ${className}`
   {...Astro.props}
+  target="_blank"
+  rel="noopener noreferrer"
 >
   <slot />
-</span>
+</a>

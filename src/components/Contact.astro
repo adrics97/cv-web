@@ -1,0 +1,24 @@
+---
+import Card from "../components/Card.astro";
+import Pill from "../components/Pill.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GmailIcon from "../icons/Gmail.astro";
+---
+
+<Card class="p-3">
+  <div class="flex justify-between items-center">
+    <h1 class="text-sm font-medium">Contacto</h1>
+    <Pill class="bg-green-300/80 h-4">Disponible para trabajar</Pill>
+  </div>
+  <div class="flex flex-start mt-2 gap-x-2">
+    <Pill
+      class="bg-white h-6"
+      href="https://www.linkedin.com/in/adri%C3%A1n-sanchis-soria-50a876221/"
+    >
+      <LinkedInIcon class="size-4" /> LinkedIn
+    </Pill>
+    <Pill class="bg-white h-6" href=" mailto:adrics97@gmail.com">
+      <GmailIcon class="size-4" /> adrics97@gmail.com
+    </Pill>
+  </div>
+</Card>

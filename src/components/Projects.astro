@@ -2,7 +2,7 @@
 import Card from "../components/Card.astro";
 import Heart from "../icons/Heart.astro";
 
-const EDUCATION = [
+const PROJECTS = [
   {
     date: "2020 - 2021",
     title:
@@ -23,15 +23,13 @@ const EDUCATION = [
 ];
 ---
 
-<Card class="p-3 flex flex-col gap-y-4">
-  <h1 class="text-sm font-medium">Educación</h1>
-  <div class="grid grid-cols-2 gap-4">
+<Card class="h-auto p-3 flex flex-col w-1/2">
+  <h1 class="text-sm font-medium">Proyectos</h1>
+  <div class="flex flex-wrap gap-4 mt-4">
     {
-      EDUCATION.map(({ date, title, institution }, index) => (
+      PROJECTS.map(({ date, title, institution }, index) => (
         <>
-          <Card
-            class={`p-3 max-w-1/2 w-auto h-auto flex flex-col gap-y-2 ${index === 0 ? "bg-highlight" : "bg-white"}`}
-          >
+          <Card class={"p-3 w-full h-auto flex flex-col gap-y-2  bg-white"}>
             <div class="flex justify-between items-center">
               <p class="text-medium font-medium">{date}</p>
               {index === 0 && (
