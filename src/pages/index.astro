@@ -10,16 +10,18 @@ import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Portfolio de Adrián Sanchis">
-  <main class="my-5 h-full flex flex-col justify-center lg:w-[650px] mx-auto">
-    <div class="flex gap-x-5">
-      <Card class="w-1/4 border border-card">
+  <main
+    class="p-3 my-5 h-full flex flex-col justify-center md:w-[650px] md:mx-auto"
+  >
+    <div class="grid grid-cols-2 gap-y-5 md:grid-cols-4 gap-x-5">
+      <Card class="w-full border border-card">
         <img
-          class="object-cover aspect-square h-full"
+          class="object-cover aspect-square"
           src="/images/fotoEmpresa.webp"
           alt="foto de Adrián Sanchis"
         />
       </Card>
-      <Card class="p-3 w-1/4">
+      <Card class="p-3 w-full float-right">
         <div class="flex flex-col justify-between h-full text-pretty">
           <p class="text-xs">Hey 👋 Soy</p>
 
@@ -32,11 +34,11 @@ import Projects from "../components/Projects.astro";
 
       <Languages />
     </div>
-    <div class="flex gap-x-5 mt-5 w-full">
+    <div class="flex flex-col gap-y-5 md:flex-row gap-x-5 mt-5 w-full">
       <Experience />
       <Tools />
     </div>
-    <div class="flex gap-x-5 mt-5 w-full">
+    <div class="flex flex-col gap-y-5 md:flex-row gap-x-5 mt-5 w-full">
       <Projects />
       <div class="flex-1 flex flex-col gap-y-4">
         <Education />
