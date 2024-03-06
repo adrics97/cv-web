@@ -6,7 +6,12 @@ export default {
 			colors: {
 				primary: '#000',
 				card: '#F0F0F0',		
-				highlight: '#28D979',			
+				highlight: '#28D979',
+				subtitle: '#3F3D3D'		
+			},
+			fontSize:{
+				small: '8px',
+				medium: '10px'
 			}
 		},
 	},

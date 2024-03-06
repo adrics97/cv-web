@@ -2,7 +2,7 @@
 const { name, level } = Astro.props;
 ---
 
-<div class="flex gap-x-4">
-  <p>{name}</p>
-  <span>{level}</span>
+<div class="flex gap-x-5 text-xs items-center">
+  <p class="w-1/4 flex-none font-medium">{name}</p>
+  <span class=`h-3 w-${level} rounded-full bg-highlight`></span>
 </div>
