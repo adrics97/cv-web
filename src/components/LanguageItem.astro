@@ -1,8 +1,10 @@
 ---
-const { name, class: className } = Astro.props;
+const { name, class: className, level } = Astro.props;
 ---
 
 <div class="flex gap-x-5 text-xs items-center">
   <p class="w-1/4 flex-none font-medium">{name}</p>
-  <span class={`h-3 rounded-full bg-highlight ${className}`}></span>
+  <span class={`h-4 rounded-full bg-highlight ${className} text-medium px-2`}
+    >{level}</span
+  >
 </div>
