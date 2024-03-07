@@ -1,22 +1,31 @@
 ---
+import ThemeToggle from "../components/ThemeToggle.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Tools from "../components/Tools.astro";
 import Languages from "../components/Languages.astro";
+import Experience from "../components/Experience.astro";
+import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="mx-5 my-5 w-[555px] h-full">
-    <div class="flex gap-x-5">
-      <Card>
+<Layout title="Portfolio de Adrián Sanchis">
+  <main
+    class="relative p-4 h-full flex flex-col justify-center md:w-[650px] md:mx-auto"
+  >
+    <ThemeToggle />
+    <div class="grid grid-cols-2 gap-y-5 md:grid-cols-4 gap-x-5">
+      <Card class="w-full border border-card">
         <img
-          class="object-cover aspect-square h-full"
-          src="src/images/fotoEmpresa.webp"
+          class="object-cover aspect-square"
+          src="/images/fotoEmpresa.webp"
           alt="foto de Adrián Sanchis"
         />
       </Card>
-      <Card class="p-3">
+      <Card class="p-3 w-full float-right">
         <div class="flex flex-col justify-between h-full text-pretty">
-          <p class="text-xs">Hey 👋 Soy</p>
+          <p class="text-xs">Hey 👋, Soy</p>
 
           <div>
             <p class="text-sm font-semibold">Adrián Sanchis</p>
@@ -24,8 +33,18 @@ import Languages from "../components/Languages.astro";
           </div>
         </div>
       </Card>
-
-      <Languages />
+      <Contact />
+    </div>
+    <div class="flex flex-col gap-y-5 md:flex-row gap-x-5 mt-5 w-full">
+      <Experience />
+      <Tools />
+    </div>
+    <div class="flex flex-col gap-y-5 md:flex-row gap-x-5 mt-5 w-full">
+      <Projects />
+      <div class="flex-1 flex flex-col gap-y-4">
+        <Education />
+        <Languages />
+      </div>
     </div>
   </main>
 </Layout>

@@ -1,0 +1,50 @@
+---
+import Card from "../components/Card.astro";
+import HeartIcon from "../icons/Heart.astro";
+import GithubIcon from "../icons/Github.astro";
+import TitleHeader from "./TitleHeader.astro";
+
+const PROJECTS = [
+  {
+    date: "2020 - 2021",
+    title:
+      "Master en Tecnologías web, Computación en la nube y Aplicaciones móviles",
+    institution: "Universitat de Valencia",
+  },
+
+  {
+    date: "2015 - 2020",
+    title: "Grado en Ingeniería Informática",
+    institution: "Universitat Jaume I",
+  },
+  {
+    date: "2013 - 2015",
+    title: "Bachillerato Internacional",
+    institution: "Lledo International School",
+  },
+];
+---
+
+<Card class="h-auto p-3 flex flex-col md:w-1/2">
+  <TitleHeader title="Proyectos">
+    <GithubIcon class="size-5" />
+  </TitleHeader>
+  <div class="flex flex-wrap gap-4 mt-4">
+    {
+      PROJECTS.map(({ date, title, institution }, index) => (
+        <>
+          <Card class={"p-3 w-full h-auto flex flex-col gap-y-2  bg-white"}>
+            <div class="flex justify-between items-center">
+              <p class="text-medium font-medium">{date}</p>
+              {index === 0 && (
+                <HeartIcon class="size-4 fill-current text-yellow-400" />
+              )}
+            </div>
+            <p class="text-medium font-medium text-pretty">{title}</p>
+            <p class="text-small">{institution}</p>
+          </Card>
+        </>
+      ))
+    }
+  </div>
+</Card>

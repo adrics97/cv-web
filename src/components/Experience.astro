@@ -1,0 +1,53 @@
+---
+import Briefcase from "@/icons/Briefcase.astro";
+import Card from "../components/Card.astro";
+import Pill from "../components/Pill.astro";
+import TitleHeader from "../components/TitleHeader.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Noviembre 2021 - Febrero 2024",
+    title: "Bestcycling SL",
+    description: `Desarrollo e implementación de diferentes proyectos utilizando las diferentes tecnologías: ReactJs, Flutter y Ruby on Rails.`,
+    position: "Desarrollador de software",
+  },
+
+  {
+    date: "Febrero 2020",
+    title: "Cuatroochenta SL",
+    description:
+      "Prácticas realizadas, curso intensivo de ReactJs, desarrollo web con ReactJs",
+    position: "Desarrollador web",
+  },
+];
+---
+
+<Card class="h-auto p-3 flex flex-col gap-y-4 md:w-2/3">
+  <TitleHeader title="Experiencia">
+    <Briefcase class="size-5" />
+  </TitleHeader>
+
+  <div>
+    {
+      EXPERIENCE.map(({ date, title, description, position }, index) => (
+        <Card
+          class={`p-3 w-full flex flex-col gap-y-2 ${index === 0 ? "bg-highlight" : "bg-white"} mb-[10px]`}
+        >
+          <div class="flex justify-between items-center">
+            <p class="text-small">{date}</p>
+            {index === 0 && (
+              <Pill class="bg-yellow-300/80 h-4">Más reciente</Pill>
+            )}
+          </div>
+          <div class="flex justify-between gap-x-5">
+            <div>
+              <p class="text-xs font-medium flex-1">{title}</p>
+              <p class="text-subtitle text-small">{position}</p>
+            </div>
+            <p class="text-pretty text-medium flex-1">{description}</p>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</Card>

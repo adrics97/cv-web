@@ -1,0 +1,52 @@
+---
+import Card from "../components/Card.astro";
+import HeartIcon from "../icons/Heart.astro";
+import SchoolIcon from "../icons/School.astro";
+import TitleHeader from "./TitleHeader.astro";
+
+const EDUCATION = [
+  {
+    date: "2020 - 2021",
+    title:
+      "Master en Tecnologías web, Computación en la nube y Aplicaciones móviles",
+    institution: "Universitat de Valencia",
+  },
+
+  {
+    date: "2015 - 2020",
+    title: "Grado en Ingeniería Informática",
+    institution: "Universitat Jaume I",
+  },
+  {
+    date: "2013 - 2015",
+    title: "Bachillerato Internacional",
+    institution: "Lledo International School",
+  },
+];
+---
+
+<Card class="p-3 flex flex-col gap-y-4">
+  <TitleHeader title="Educación">
+    <SchoolIcon class="size-5" />
+  </TitleHeader>
+  <div class="grid grid-cols-2 gap-4">
+    {
+      EDUCATION.map(({ date, title, institution }, index) => (
+        <>
+          <Card
+            class={`p-3 max-w-1/2 w-auto h-auto flex flex-col gap-y-2 ${index === 0 ? "bg-highlight" : "bg-white"}`}
+          >
+            <div class="flex justify-between items-center">
+              <p class="text-medium font-medium">{date}</p>
+              {index === 0 && (
+                <HeartIcon class="size-4 fill-current text-yellow-400" />
+              )}
+            </div>
+            <p class="text-medium font-medium text-pretty">{title}</p>
+            <p class="text-small">{institution}</p>
+          </Card>
+        </>
+      ))
+    }
+  </div>
+</Card>

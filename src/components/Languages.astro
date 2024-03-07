@@ -1,13 +1,17 @@
 ---
 import Card from "../components/Card.astro";
 import LanguageItem from "../components/LanguageItem.astro";
+import TitleHeader from "./TitleHeader.astro";
+import LanguageIcon from "../icons/Language.astro";
 ---
 
-<Card class="w-72 p-3 flex flex-col justify-between">
-  <p class="text-base font-semibold">Idiomas</p>
-  <div class="flex flex-col gap-y-1 text-sm">
-    <LanguageItem name="Ingles" level="7" />
-    <LanguageItem name="Español" level="10" />
-    <LanguageItem name="Valenciano" level="7" />
+<Card class="w-full p-3 flex flex-col gap-y-3 justify-between">
+  <TitleHeader title="Idiomas">
+    <LanguageIcon class="size-5" />
+  </TitleHeader>
+  <div class="flex flex-col gap-y-1">
+    <LanguageItem class="w-full" name="Español" />
+    <LanguageItem class="w-32" name="Ingles" />
+    <LanguageItem class="w-32" name="Valenciano" />
   </div>
 </Card>
