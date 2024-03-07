@@ -11,21 +11,30 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset=" UTF-8" />
     <meta name="description" content="Portfolio de Adrián Sanchis " />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-800/90">
     <slot />
   </body>
 </html>
+
 <style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
-    background: #fff;
+    scroll-behavior: smooth;
     min-height: 100vh;
+  }
+
+  body {
+    color: #000000;
   }
 </style>
