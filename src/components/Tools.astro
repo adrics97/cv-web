@@ -9,10 +9,14 @@ import DartIcon from "../icons/Dart.astro";
 import JavaScriptIcon from "../icons/JavaScript.astro";
 import TypeScriptIcon from "../icons/TypeScript.astro";
 import ReactQueryIcon from "../icons/ReactQuery.astro";
+import CodeIcon from "../icons/Code.astro";
+import TitleHeader from "./TitleHeader.astro";
 ---
 
 <Card class="p-4 flex flex-col gap-y-4 md:w-1/3">
-  <h1 class="text-sm font-medium">Herramientas</h1>
+  <TitleHeader title="Herramientas">
+    <CodeIcon class="size-5" />
+  </TitleHeader>
   <div class="flex flex-col gap-y-4 p-x-4">
     <Card
       class="bg-white p-4 flex justify-center flex-wrap gap-4 relative overflow-visible"

@@ -1,6 +1,8 @@
 ---
 import Card from "../components/Card.astro";
-import Heart from "../icons/Heart.astro";
+import HeartIcon from "../icons/Heart.astro";
+import GithubIcon from "../icons/Github.astro";
+import TitleHeader from "./TitleHeader.astro";
 
 const PROJECTS = [
   {
@@ -24,7 +26,9 @@ const PROJECTS = [
 ---
 
 <Card class="h-auto p-3 flex flex-col md:w-1/2">
-  <h1 class="text-sm font-medium">Proyectos</h1>
+  <TitleHeader title="Proyectos">
+    <GithubIcon class="size-5" />
+  </TitleHeader>
   <div class="flex flex-wrap gap-4 mt-4">
     {
       PROJECTS.map(({ date, title, institution }, index) => (
@@ -33,7 +37,7 @@ const PROJECTS = [
             <div class="flex justify-between items-center">
               <p class="text-medium font-medium">{date}</p>
               {index === 0 && (
-                <Heart class="size-4 fill-current text-yellow-400" />
+                <HeartIcon class="size-4 fill-current text-yellow-400" />
               )}
             </div>
             <p class="text-medium font-medium text-pretty">{title}</p>

@@ -1,6 +1,8 @@
 ---
 import Card from "../components/Card.astro";
-import Heart from "../icons/Heart.astro";
+import HeartIcon from "../icons/Heart.astro";
+import SchoolIcon from "../icons/School.astro";
+import TitleHeader from "./TitleHeader.astro";
 
 const EDUCATION = [
   {
@@ -24,7 +26,9 @@ const EDUCATION = [
 ---
 
 <Card class="p-3 flex flex-col gap-y-4">
-  <h1 class="text-sm font-medium">Educación</h1>
+  <TitleHeader title="Educación">
+    <SchoolIcon class="size-5" />
+  </TitleHeader>
   <div class="grid grid-cols-2 gap-4">
     {
       EDUCATION.map(({ date, title, institution }, index) => (
@@ -35,7 +39,7 @@ const EDUCATION = [
             <div class="flex justify-between items-center">
               <p class="text-medium font-medium">{date}</p>
               {index === 0 && (
-                <Heart class="size-4 fill-current text-yellow-400" />
+                <HeartIcon class="size-4 fill-current text-yellow-400" />
               )}
             </div>
             <p class="text-medium font-medium text-pretty">{title}</p>
