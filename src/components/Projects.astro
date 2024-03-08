@@ -1,26 +1,21 @@
 ---
 import Card from "../components/Card.astro";
-import HeartIcon from "../icons/Heart.astro";
+import AstroIcon from "../icons/AstroSvg.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
 import GithubIcon from "../icons/Github.astro";
+import CodeIcon from "../icons/Code.astro";
 import TitleHeader from "./TitleHeader.astro";
+import Pill from "./Pill.astro";
 
 const PROJECTS = [
   {
-    date: "2020 - 2021",
-    title:
-      "Master en Tecnologías web, Computación en la nube y Aplicaciones móviles",
-    institution: "Universitat de Valencia",
-  },
+    image: "/images/portfolio.webp",
+    title: "Portfolio de Adrián Sanchis",
+    description:
+      "Web creada con Astro que muestra los conocimientos y los proyectos realizados",
+    technologies: ["Astro", "TailwindCSS"],
 
-  {
-    date: "2015 - 2020",
-    title: "Grado en Ingeniería Informática",
-    institution: "Universitat Jaume I",
-  },
-  {
-    date: "2013 - 2015",
-    title: "Bachillerato Internacional",
-    institution: "Lledo International School",
+    link: "https://github.com/adrics97/cv-web",
   },
 ];
 ---
@@ -31,24 +26,53 @@ const PROJECTS = [
   </TitleHeader>
   <div class="flex flex-wrap gap-4 mt-4">
     {
-      PROJECTS.map(({ date, title, institution }, index) => (
-        <>
-          <Card
-            class={
-              "p-3 w-full h-auto flex flex-col gap-y-2  bg-white dark:bg-cardDark"
-            }
-          >
-            <div class="flex justify-between items-center">
-              <p class="text-medium font-medium">{date}</p>
-              {index === 0 && (
-                <HeartIcon class="size-4 fill-current text-yellow-400" />
-              )}
-            </div>
-            <p class="text-medium font-medium text-pretty">{title}</p>
-            <p class="text-small">{institution}</p>
-          </Card>
-        </>
-      ))
+      PROJECTS.map(
+        ({ image, title, description, technologies, link }, index) => (
+          <>
+            <Card
+              class={
+                "w-full h-auto flex flex-col gap-y-2  bg-white dark:bg-secondaryCardDark"
+              }
+            >
+              <img
+                src={image}
+                class="hover:scale-110 transition duration-500"
+                alt="project ${image}"
+              />
+
+              <div class="px-3">
+                <p class="text-medium font-medium">{title}</p>
+                <p class="text-medium text-pretty mt-2">{description}</p>
+
+                <div class="flex gap-2 flex-wrap mt-2 mb-3">
+                  {technologies.map((technology) => (
+                    <Pill class="bg-card dark:bg-black h-6">
+                      {(() => {
+                        switch (technology) {
+                          case "Astro":
+                            return <AstroIcon class="size-4" />;
+                          case "TailwindCSS":
+                            return <TailwindIcon class="size-4" />;
+                          default:
+                            return null; // Renderiza null si no hay coincidencia
+                        }
+                      })()}
+
+                      {technology}
+                    </Pill>
+                  ))}
+                  <Pill
+                    class="bg-card dark:bg-black h-6 hover:scale-110 transition"
+                    href={link}
+                  >
+                    <CodeIcon class="size-4" /> Code
+                  </Pill>
+                </div>
+              </div>
+            </Card>
+          </>
+        )
+      )
     }
   </div>
 </Card>

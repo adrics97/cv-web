@@ -7,7 +7,7 @@ export default {
 			colors: {
 				primary: '#000',
 				card: '#F0F0F0',
-				cardDark: "#1F2937",		
+				secondaryCardDark: "#1F2937",		
 				highlight: '#28D979',
 				highlightDark: "#16A34A",
 				subtitle: '#3F3D3D'		
