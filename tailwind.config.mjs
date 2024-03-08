@@ -8,8 +8,8 @@ export default {
 				primary: '#000',
 				card: '#F0F0F0',
 				cardDark: "#1F2937",		
-				highligth: '#28D979',
-				highligthDark: "#16A34A",
+				highlight: '#28D979',
+				highlightDark: "#16A34A",
 				subtitle: '#3F3D3D'		
 			},
 			fontSize:{
