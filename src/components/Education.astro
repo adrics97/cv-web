@@ -34,7 +34,7 @@ const EDUCATION = [
       EDUCATION.map(({ date, title, institution }, index) => (
         <>
           <Card
-            class={`p-3 max-w-1/2 w-auto h-auto flex flex-col gap-y-2 ${index === 0 ? "bg-highlight" : "bg-white"}`}
+            class={`p-3 max-w-1/2 w-auto h-auto flex flex-col gap-y-2 ${index === 0 ? "bg-highligth dark:bg-highligthDark" : "bg-white dark:bg-cardDark"}`}
           >
             <div class="flex justify-between items-center">
               <p class="text-medium font-medium">{date}</p>

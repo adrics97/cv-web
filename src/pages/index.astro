@@ -16,7 +16,7 @@ import Projects from "../components/Projects.astro";
   >
     <ThemeToggle />
     <div class="grid grid-cols-2 gap-y-5 md:grid-cols-4 gap-x-5">
-      <Card class="w-full border border-card">
+      <Card class="w-full border border-card dark:border-cardDark">
         <img
           class="object-cover aspect-square"
           src="/images/fotoEmpresa.webp"
@@ -29,7 +29,9 @@ import Projects from "../components/Projects.astro";
 
           <div>
             <p class="text-sm font-semibold">Adrián Sanchis</p>
-            <h2 class="text-xs text-[#5C5C5C]">Desarrollador de software</h2>
+            <h2 class="text-xs text-[#5C5C5C] dark:text-gray-300/80">
+              Desarrollador de software
+            </h2>
           </div>
         </div>
       </Card>

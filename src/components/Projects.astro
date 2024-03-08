@@ -33,7 +33,11 @@ const PROJECTS = [
     {
       PROJECTS.map(({ date, title, institution }, index) => (
         <>
-          <Card class={"p-3 w-full h-auto flex flex-col gap-y-2  bg-white"}>
+          <Card
+            class={
+              "p-3 w-full h-auto flex flex-col gap-y-2  bg-white dark:bg-cardDark"
+            }
+          >
             <div class="flex justify-between items-center">
               <p class="text-medium font-medium">{date}</p>
               {index === 0 && (

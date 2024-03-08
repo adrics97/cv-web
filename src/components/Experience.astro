@@ -22,7 +22,7 @@ const EXPERIENCE = [
 ];
 ---
 
-<Card class="h-auto p-3 flex flex-col gap-y-4 md:w-2/3">
+<Card class="h-auto p-3 flex flex-col gap-y-4 md:w-2/3 dark:bg-gray-700">
   <TitleHeader title="Experiencia">
     <Briefcase class="size-5" />
   </TitleHeader>
@@ -31,18 +31,22 @@ const EXPERIENCE = [
     {
       EXPERIENCE.map(({ date, title, description, position }, index) => (
         <Card
-          class={`p-3 w-full flex flex-col gap-y-2 ${index === 0 ? "bg-highlight" : "bg-white"} mb-[10px]`}
+          class={`p-3 w-full flex flex-col gap-y-2 ${index === 0 ? "bg-highligth dark:bg-highligthDark" : "bg-white dark:bg-cardDark"} mb-[10px]`}
         >
           <div class="flex justify-between items-center">
             <p class="text-small">{date}</p>
             {index === 0 && (
-              <Pill class="bg-yellow-300/80 h-4">Más reciente</Pill>
+              <Pill class="bg-yellow-300/80 dark:bg-yellow-600/80  h-4">
+                Más reciente
+              </Pill>
             )}
           </div>
           <div class="flex justify-between gap-x-5">
             <div>
               <p class="text-xs font-medium flex-1">{title}</p>
-              <p class="text-subtitle text-small">{position}</p>
+              <p class="text-subtitle dark:text-gray-300/80 text-small">
+                {position}
+              </p>
             </div>
             <p class="text-pretty text-medium flex-1">{description}</p>
           </div>
