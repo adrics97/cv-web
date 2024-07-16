@@ -3,6 +3,9 @@ import Card from "../components/Card.astro";
 import AstroIcon from "../icons/AstroSvg.astro";
 import TailwindIcon from "../icons/Tailwind.astro";
 import GithubIcon from "../icons/Github.astro";
+import FlutterIcon from "../icons/Flutter.astro";
+import DartIcon from "../icons/Dart.astro";
+import FirebaseIcon from "../icons/Firebase.astro";
 import CodeIcon from "../icons/Code.astro";
 import TitleHeader from "./TitleHeader.astro";
 import Pill from "./Pill.astro";
@@ -17,30 +20,48 @@ const PROJECTS = [
 
     link: "https://github.com/adrics97/cv-web",
   },
+
+  {
+    image: "/images/padelresult.webp",
+    title: "Padel Result",
+    description:
+      "Apliación de Flutter para anotar resultados de los partidos de padel",
+    technologies: ["Flutter", "Dart", "Firebase"],
+  },
 ];
+
+const hasFlutterTechnology = (technologies: string[]) =>
+  technologies.includes("Flutter");
 ---
 
 <Card class="h-auto p-3 flex flex-col md:w-1/2">
   <TitleHeader title="Proyectos">
     <GithubIcon class="size-5" />
   </TitleHeader>
+
   <div class="flex flex-wrap gap-4 mt-4">
     {
       PROJECTS.map(
         ({ image, title, description, technologies, link }, index) => (
           <>
             <Card
-              class={
-                "w-full h-auto flex flex-col gap-y-2  bg-white dark:bg-secondaryCardDark"
-              }
+              class={`${
+                hasFlutterTechnology(technologies)
+                  ? "w-full h-auto flex flex-row bg-white dark:bg-secondaryCardDark"
+                  : "w-full h-auto flex flex-col gap-y-2 bg-white dark:bg-secondaryCardDark"
+              }`}
             >
               <img
                 src={image}
-                class="hover:scale-110 transition duration-500"
+                class={`${
+                  hasFlutterTechnology(technologies)
+                    ? "max-w-full max-h-60 object-cover hover:scale-110 transition duration-500"
+                    : "max-w-full hover:scale-110 transition duration-500"
+                }`}
                 alt="project ${image}"
               />
 
-              <div class="px-3">
+              <div class="p-3">
                 <p class="text-medium font-medium">{title}</p>
                 <p class="text-medium text-pretty mt-2">{description}</p>
 
@@ -53,6 +74,12 @@ const PROJECTS = [
                             return <AstroIcon class="size-4" />;
                           case "TailwindCSS":
                             return <TailwindIcon class="size-4" />;
+                          case "Flutter":
+                            return <FlutterIcon class="size-4" />;
+                          case "Dart":
+                            return <DartIcon class="size-4" />;
+                          case "Firebase":
+                            return <FirebaseIcon class="size-4" />;
                           default:
                             return null; // Renderiza null si no hay coincidencia
                         }
@@ -61,12 +88,14 @@ const PROJECTS = [
                       {technology}
                     </Pill>
                   ))}
-                  <Pill
-                    class="bg-card dark:bg-black h-6 hover:scale-110 transition"
-                    href={link}
-                  >
-                    <CodeIcon class="size-4" /> Code
-                  </Pill>
+                  {link && (
+                    <Pill
+                      class="bg-card dark:bg-black h-6 hover:scale-110 transition"
+                      href={link}
+                    >
+                      <CodeIcon class="size-4" /> Code
+                    </Pill>
+                  )}
                 </div>
               </div>
             </Card>
